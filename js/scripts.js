@@ -81,9 +81,10 @@ class Calculator {
         if(operationValue === null) {
             this.currentOperationText.innerText += this.currentOperation;
         } else {
-            // Check if value is zero, if it is just add current value
-            if(previous === 0) {
-                operationValue = current
+            // The first operand is entered before a previous operation exists.
+            // Do not treat a previous value of 0 as an empty operation.
+            if (this.previousOperationText.innerText === "") {
+                operationValue = current;
             }
 
             // Add current value to previous
