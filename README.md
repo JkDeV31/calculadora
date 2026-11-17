@@ -56,6 +56,12 @@ calculadora/
 2. Acesse a pasta `calculadora`.
 3. Abra o arquivo `index.html` no navegador.
 
+## Prévia para compartilhamento
+
+A imagem `img/preview-social.png` (1200 × 630 pixels) foi preparada a partir de uma captura da interface real da calculadora renderizada em Chromium, com identificação da JkDeV e da origem educacional. O HTML inclui metadados **Open Graph** e **Twitter Card** para compartilhamentos.
+
+A imagem é destinada à prévia dos links em redes sociais; não altera a calculadora nem sua lógica. A atualização da imagem no LinkedIn depende da publicação no GitHub Pages e do cache da plataforma.
+
 ## Limitações e possíveis melhorias
 
 - O uso foi implementado por meio dos botões da interface; ainda não há atalhos próprios para digitar expressões diretamente pelo teclado.
