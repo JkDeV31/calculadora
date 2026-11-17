@@ -59,7 +59,7 @@ calculadora/
 ## Limitações e possíveis melhorias
 
 - O uso foi implementado por meio dos botões da interface; ainda não há atalhos próprios para digitar expressões diretamente pelo teclado.
-- O CSS utiliza uma largura fixa para a calculadora. A adaptação a telas pequenas ainda merece revisão.
+- O layout usa largura flexível de até 400 px e ajustes CSS para telas pequenas. Ainda é importante verificar a experiência em dispositivos reais e diferentes navegadores.
 - O repositório não contém uma suíte de testes automatizados versionada. Os cenários de cálculo já foram verificados separadamente durante as revisões do projeto, mas isso não equivale a uma cobertura completa.
 - Casos numéricos extremos e diferentes tamanhos de tela ainda precisam de testes adicionais.
 
