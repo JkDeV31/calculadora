@@ -16,7 +16,8 @@ body {
 }
 
 #calc {
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     padding: .5em;
     background-color: #c4c4c4;
     color: #000;
@@ -95,4 +96,19 @@ body {
 #buttons-container #equal-btn:hover {
     grid-column: span 2;
     background-color: #3a91d8;
+}
+
+/* Adapt the calculator to narrow screens without changing the desktop layout. */
+@media (max-width: 480px) {
+    body {
+        padding: 1rem;
+    }
+
+    #current-operation {
+        font-size: clamp(1.75rem, 8vw, 3rem);
+    }
+
+    #buttons-container button {
+        font-size: 1rem;
+    }
 }
