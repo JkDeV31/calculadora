@@ -62,6 +62,7 @@ class Calculator {
                 if (this.previousOperationText.innerText !== "" && current === 0) {
                     this.previousOperationText.innerText = "";
                     this.currentOperationText.innerText = "Erro: divisão por zero";
+                    this.currentOperationText.classList.add("is-error");
                     this.divisionByZeroError = true;
                     return;
                 }
@@ -137,6 +138,7 @@ class Calculator {
         this.currentOperationText.innerText = "";
         this.previousOperationText.innerText = "";
         this.divisionByZeroError = false;
+        this.currentOperationText.classList.remove("is-error");
     }
 
     // Process an operatio
