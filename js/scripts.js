@@ -7,10 +7,16 @@ class Calculator {
         this.previousOperationText = previousOperationText;
         this.currentOperationText = currentOperationText;
         this.currentOperation = "";
+        this.divisionByZeroError = false;
     }
     
     // add digit to calculator screen
     addDigit(digit) {
+        // Start a fresh calculation when a digit is entered after an error.
+        if (this.divisionByZeroError) {
+            this.processClearOperation();
+        }
+
         //check if current operation already has a dot
         if (digit === "." && this.currentOperationText.innerText.includes(".")) {
             return;
@@ -22,6 +28,13 @@ class Calculator {
 
     // Process all calculator operations 
     processOperation(operation) {
+        if (this.divisionByZeroError) {
+            if (["C", "CE", "DEL"].includes(operation)) {
+                this.processClearOperation();
+            }
+            return;
+        }
+
         // Check if current is empty
         if (this.currentOperationText.innerText === "" && operation !== "C") {
             // Change operation
@@ -46,6 +59,12 @@ class Calculator {
                 this.updateScreen(operationValue, operation, current, previous);
                 break;
                 case "/":
+                if (this.previousOperationText.innerText !== "" && current === 0) {
+                    this.previousOperationText.innerText = "";
+                    this.currentOperationText.innerText = "Erro: divisão por zero";
+                    this.divisionByZeroError = true;
+                    return;
+                }
                 operationValue = previous / current
                 this.updateScreen(operationValue, operation, current, previous);
                 break;
@@ -117,6 +136,7 @@ class Calculator {
     processClearOperation() {
         this.currentOperationText.innerText = "";
         this.previousOperationText.innerText = "";
+        this.divisionByZeroError = false;
     }
 
     // Process an operatio
